@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from database import products_collection
+from backend.database import products_collection
 from bson import ObjectId
 
 router = APIRouter(

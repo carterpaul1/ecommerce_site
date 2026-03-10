@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from database import users_collection
+from backend.database import users_collection
 from passlib.context import CryptContext
 from jose import jwt
 from datetime import datetime, timedelta

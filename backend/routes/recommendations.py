@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from services.recommendation_engine import recommend_products
+from backend.services.recommendation_engine import recommend_products
 
 router = APIRouter(
     prefix="/recommendations",

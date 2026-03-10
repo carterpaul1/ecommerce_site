@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from database import orders_collection, products_collection
+from backend.database import orders_collection, products_collection
 from bson import ObjectId
 from datetime import datetime
 
@@ -20,9 +20,14 @@ def create_order(order: dict):
 
     for item in items:
 
+        print("Looking up product:", item["product_id"])
+
         product = products_collection.find_one(
             {"_id": ObjectId(item["product_id"])}
         )
+
+        if not product:
+            return {"error": f"Product not found: {item['product_id']}"}
 
         price = product["price"]
         quantity = item["quantity"]

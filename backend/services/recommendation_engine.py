@@ -1,5 +1,5 @@
 from collections import Counter
-from database import orders_collection, products_collection
+from backend.database import orders_collection, products_collection
 
 def recommend_products(user_id: str):
 
